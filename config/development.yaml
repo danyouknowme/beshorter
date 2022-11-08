@@ -4,4 +4,8 @@ debug: true
 gin_mode: "debug"
 
 db_driver: "postgres"
-db_source: "postgresql://root:secret@localhost:5432/beshorter?sslmode=disable"
+db_host: "localhost"
+db_port: 5432
+db_user: "root"
+db_password: "secret"
+db_name: "beshorter"
