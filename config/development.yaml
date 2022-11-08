@@ -1,0 +1,7 @@
+env: "development"
+server_address: "0.0.0.0:8080"
+debug: true
+gin_mode: "debug"
+
+db_driver: "postgres"
+db_source: "postgresql://root:secret@localhost:5432/beshorter?sslmode=disable"
