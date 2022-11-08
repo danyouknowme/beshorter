@@ -10,7 +10,11 @@ type Config struct {
 	Debug         bool   `mapstructure:"debug"`
 	GinMode       string `mapstructure:"gin_mode"`
 	DB_Driver     string `mapstructure:"db_driver"`
-	DB_Source     string `mapstructure:"db_source"`
+	DB_Hostname   string `mapstructure:"db_host"`
+	DB_Port       int    `mapstructure:"db_port"`
+	DB_Username   string `mapstructure:"db_user"`
+	DB_Password   string `mapstructure:"db_password"`
+	DB_Name       string `mapstructure:"db_name"`
 }
 
 func LoadConfig(path string) (config Config, err error) {
