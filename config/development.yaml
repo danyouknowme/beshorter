@@ -2,6 +2,7 @@ env: "development"
 server_address: "0.0.0.0:8080"
 debug: true
 gin_mode: "debug"
+server_url: "http://localhost:8080"
 
 db_driver: "postgres"
 db_host: "localhost"
