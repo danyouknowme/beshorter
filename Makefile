@@ -8,10 +8,10 @@ dropdb:
 	docker exec -it postgresql dropdb beshorter
 
 migrateup:
-	migrate -path database/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
+	migrate -path database/migration -database "postgresql://root:secret@localhost:5432/beshorter?sslmode=disable" -verbose up
 
 migratedown:
-	migrate -path database/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose down
+	migrate -path database/migration -database "postgresql://root:secret@localhost:5432/beshorter?sslmode=disable" -verbose down
 
 server:
 	go run main.go
