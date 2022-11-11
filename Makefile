@@ -13,7 +13,10 @@ migrateup:
 migratedown:
 	migrate -path database/migration -database "postgresql://root:secret@localhost:5432/beshorter?sslmode=disable" -verbose down
 
+test:
+	go test -v ./...
+
 server:
 	go run main.go
 
-.PHONY: postgres createdb dropdb migrateup migratedown server
+.PHONY: postgres createdb dropdb migrateup migratedown test server
