@@ -11,12 +11,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type shortUrlHandler struct {
+type ShortUrlHandler struct {
 	shortUrlService service.ShortUrlService
 }
 
-func NewShortUrlHandler(shortUrlService service.ShortUrlService) shortUrlHandler {
-	return shortUrlHandler{
+func NewShortUrlHandler(shortUrlService service.ShortUrlService) ShortUrlHandler {
+	return ShortUrlHandler{
 		shortUrlService: shortUrlService,
 	}
 }
@@ -25,7 +25,7 @@ type CreateShortenerUrlHandlerRequest struct {
 	Url string `json:"url"`
 }
 
-func (h *shortUrlHandler) CreateShortenerUrlHandler(c *gin.Context) {
+func (h *ShortUrlHandler) CreateShortenerUrlHandler(c *gin.Context) {
 	var req CreateShortenerUrlHandlerRequest
 
 	if err := c.BindJSON(&req); err != nil {
@@ -43,7 +43,7 @@ func (h *shortUrlHandler) CreateShortenerUrlHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"url": urlResponse})
 }
 
-func (h *shortUrlHandler) GetShortenerUrlHandler(c *gin.Context) {
+func (h *ShortUrlHandler) GetShortenerUrlHandler(c *gin.Context) {
 	shortUrl := c.Param("url")
 	fullUrl, err := h.shortUrlService.GetShortenerUrl(shortUrl)
 	if err != nil {
