@@ -43,7 +43,7 @@ func main() {
 	shortUrlHandler := handler.NewShortUrlHandler(shortUrlService)
 
 	server := httpserver.NewHTTPServer()
-	server.GET("/", handler.HealthCheckHandler)
+	server.GET("/healthcheck", handler.HealthCheckHandler)
 	server.GET("/:url", shortUrlHandler.GetShortenerUrlHandler)
 	server.POST("/url/shorter", shortUrlHandler.CreateShortenerUrlHandler)
 
